@@ -161,7 +161,6 @@ require("lazy").setup({
 						window_picker = {
 							enable = false, -- Disable the window picker
 						},
-						open_as_tab = true, -- This is the key option!
 					},
 				},
 				sort = {
@@ -583,7 +582,22 @@ require("lazy").setup({
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
 				-- ts_ls = {},
 				--
-
+				pylsp = {
+					settings = {
+						pylsp = {
+							plugins = {
+								pyflakes = { enabled = false },
+								pycodestyle = { enabled = false },
+								autopep8 = { enabled = false },
+								yapf = { enabled = false },
+								mccabe = { enabled = false },
+								pylsp_mypy = { enabled = false },
+								pylsp_black = { enabled = false },
+								pylsp_isort = { enabled = false },
+							},
+						},
+					},
+				},
 				lua_ls = {
 					-- cmd = { ... },
 					-- filetypes = { ... },
@@ -613,6 +627,7 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"ruff"
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -668,6 +683,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				go = { "gofmt" },
+				python = { "ruff_fix", "ruff_format" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
