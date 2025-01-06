@@ -4,10 +4,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- disabled newtr for working with nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -107,9 +103,6 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- toggle the tree window
-vim.keymap.set("n", "<C-t>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -150,35 +143,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	{
-		"nvim-tree/nvim-tree.lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" }, -- Make sure nvim-web-devicons is a dependency
-		config = function()
-			require("nvim-tree").setup({
-				actions = {
-					open_file = {
-						quit_on_open = true, -- Close the tree when you open a file
-						window_picker = {
-							enable = false, -- Disable the window picker
-						},
-					},
-				},
-				sort = {
-					sorter = "case_sensitive",
-				},
-				view = {
-					width = 30,
-				},
-				renderer = {
-					group_empty = true,
-				},
-				filters = {
-					dotfiles = true,
-				},
-			})
-		end,
-	},
-
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
 	-- keys can be used to configure plugin behavior/loading/etc.
@@ -627,7 +591,7 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
-				"ruff"
+				"ruff",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -920,12 +884,11 @@ require("lazy").setup({
 	--
 	--  Here are some example plugins that I've included in the Kickstart repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
-	--
 	-- require 'kickstart.plugins.debug',
 	-- require 'kickstart.plugins.indent_line',
 	-- require 'kickstart.plugins.lint',
 	-- require 'kickstart.plugins.autopairs',
-	-- require 'kickstart.plugins.neo-tree',
+	require("plugins.neo-tree"),
 	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
