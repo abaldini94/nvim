@@ -12,6 +12,7 @@ local plugins = {
 	require("plugins.treesitter"),
 	require("plugins.neotree"),
 	require("plugins.toggleterm"),
+	require("plugins.multicursor"),
 }
 
 local opts = {
