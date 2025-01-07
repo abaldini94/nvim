@@ -15,4 +15,7 @@ vim.keymap.set(
 	{ desc = "Search and replace word under cursor" }
 )
 vim.keymap.set("n", "<leader>t", ":ToggleTerm size=30 direction=horizontal<CR>", { desc = "Toggle terminal" })
+
 vim.keymap.set("t", "<leader>tt", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "Untoggle terminal" })
+
+vim.keymap.set("i", "<leader>bt", "`", { desc = "Backtick" })
