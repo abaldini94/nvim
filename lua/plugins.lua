@@ -13,6 +13,7 @@ local plugins = {
 	require("plugins.neotree"),
 	require("plugins.toggleterm"),
 	require("plugins.multicursor"),
+	require("plugins.peek"),
 }
 
 local opts = {
