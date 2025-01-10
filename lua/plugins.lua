@@ -6,6 +6,7 @@ local plugins = {
 	require("plugins.telescope"),
 	require("plugins.autoformat"),
 	require("plugins.autocompletion"),
+	require("plugins.autopairs"),
 	require("plugins.colorscheme"),
 	require("plugins.todos"),
 	require("plugins.mini"),
@@ -14,6 +15,7 @@ local plugins = {
 	require("plugins.toggleterm"),
 	require("plugins.multicursor"),
 	require("plugins.peek"),
+	require("plugins.codeium"),
 }
 
 local opts = {
