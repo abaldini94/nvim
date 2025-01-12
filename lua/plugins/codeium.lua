@@ -1,6 +1,9 @@
 return {
-	"Exafunction/codeium.vim",
+	"Exafunction/codeium.nvim",
 	config = function()
+		require("codeium").setup({
+			enable_chat = true,
+		})
 		-- Change '<C-g>' here to any keycode you like.
 		vim.keymap.set("i", "<C-g>", function()
 			return vim.fn["codeium#Accept"]()
