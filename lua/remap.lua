@@ -32,3 +32,5 @@ vim.keymap.set("i", "<C-Left>", "<Esc>vh", { desc = "Select character left" })
 vim.keymap.set("i", "<C-Right>", "<Esc>vl", { desc = "Select character right" })
 vim.keymap.set("i", "<C-Up>", "<Esc>vk", { desc = "Select line up" })
 vim.keymap.set("i", "<C-Down>", "<Esc>vj", { desc = "Select line down" })
+
+vim.keymap.set("n", "<leader>rs", vim.lsp.buf.rename, { desc = "[R]ename [S]ymbol" })
