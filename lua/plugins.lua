@@ -7,7 +7,7 @@ local plugins = {
 	require("plugins.autoformat"),
 	require("plugins.autocompletion"),
 	require("plugins.autopairs"),
-	require("plugins.colorschemes.github"),
+	require("plugins.colorschemes.cattpuccin"),
 	require("plugins.todos"),
 	require("plugins.mini"),
 	require("plugins.treesitter"),
@@ -15,7 +15,7 @@ local plugins = {
 	require("plugins.toggleterm"),
 	require("plugins.multicursor"),
 	require("plugins.peek"),
-	require("plugins.codeium"),
+	require("plugins.windsurf"),
 }
 
 local opts = {
