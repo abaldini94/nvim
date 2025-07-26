@@ -6,16 +6,12 @@ local plugins = {
 	require("plugins.telescope"),
 	require("plugins.autoformat"),
 	require("plugins.autocompletion"),
-	require("plugins.autopairs"),
 	require("plugins.colorschemes.cattpuccin"),
-	require("plugins.todos"),
 	require("plugins.mini"),
 	require("plugins.treesitter"),
 	require("plugins.neotree"),
 	require("plugins.toggleterm"),
 	require("plugins.multicursor"),
-	require("plugins.peek"),
-	require("plugins.windsurf"),
 }
 
 local opts = {
